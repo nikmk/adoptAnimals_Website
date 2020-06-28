@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
-export default class Details extends Component {
+class Details extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
+      redirect: false,
     };
   }
 
@@ -42,4 +44,12 @@ export default class Details extends Component {
       </div>
     );
   }
+}
+
+export default function DetailsWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
 }
