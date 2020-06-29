@@ -5,7 +5,10 @@ import { Link, navigate } from "@reach/router";
 class ErrorBoundary extends Component {
   constructor() {
     super();
-    this.state = { hasError: false };
+    this.state = {
+      hasError: false,
+      // redirect:false
+    };
   }
 
   static getDerivedStateFromError() {
